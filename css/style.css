@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,700;0,900;1,400&display=swap");
+* {
+  font-family: Raleway;
+  margin: 0;
+  padding: 0;
+}
+
+.USP {
+  background: #f0f0f0;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-gap: 1em;
+  padding: 10px 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
