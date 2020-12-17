@@ -1,4 +1,4 @@
-<?php include('./server.php'); ?>
+<?php include 'server.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +15,7 @@
 
         <form action="registration.php" method="post">
 
-            <?php include('./errors.php') ?>
+            <?php include 'errors.php'; ?>
 
             <div>
                 <label for="username">Username: </label>

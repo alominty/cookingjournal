@@ -1,4 +1,4 @@
-<?php include('./server.php'); ?>
+<?php include 'server.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,9 @@
         </div>
 
         <form action="login.php" method="post">
+
+            <?php include 'errors.php'; ?>
+
             <div>
                 <label for="username">Username: </label>
                 <input type="text" name="username" required>

@@ -49,11 +49,18 @@ if(isset($_POST['reg_user'])) {
         $password = md5($password_1); //this will encrypt the password
         $query = "INSERT INTO tbl_user (username, email, password) VALUES ('$username', '$email', '$password')";
 
-        mysqli_query($db,$query);
-        $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You are now logged in!";
+        $sql = mysqli_query($db,$query);
 
-        header('location: ./index_login.php');
+        if($sql) {
+
+            $_SESSION['username'] = $username;
+            $_SESSION['success'] = "You are now registered!";
+            header('location: index.php');
+
+        } else {
+            $_SESSION['error']= "Data Submit Error! Please try again!";
+			header("location: login.php");
+        }
 
     }
 }
@@ -72,17 +79,18 @@ if(isset($_POST['login_user'])) {
 
         $password = md5($password);
         $query = "SELECT * FROM tbl_user WHERE username='$username' AND password='$password'";
-        $results = mysqli_query($db, $query);
+        $sql = mysqli_query($db, $query);
 
-        if(mysqli_num_rows($results)) {
+        if($sql) {
 
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "Logged in successfully!";
-            header('location: ./index_login');
+            header('location: index.php');
 
         } else {
 
             array_push($errors, "Wrong username/password combination. Please try again!");
+            header('location: login.php');
 
         }
 
