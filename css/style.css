@@ -13,4 +13,13 @@
   padding: 10px 20px;
 }
 
+a {
+  text-decoration: none;
+  color: #757575;
+}
+a:hover {
+  cursor: pointer;
+  color: #504f4f;
+}
+
 /*# sourceMappingURL=style.css.map */
