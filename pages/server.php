@@ -46,7 +46,7 @@ if(isset($_POST['reg_user'])) {
 
     if(count($errors) == 0) {
 
-        $password = md5($password_1); //this will encrypt the password
+        $password = password_hash($password_1, PASSWORD_DEFAULT); //this will encrypt the password
         $query = "INSERT INTO tbl_user (username, email, password) VALUES ('$username', '$email', '$password')";
 
         $sql = mysqli_query($db,$query);
