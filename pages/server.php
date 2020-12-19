@@ -77,7 +77,7 @@ if(isset($_POST['login_user'])) {
 
     if(count($errors) == 0) {
 
-        $password = md5($password);
+        $password = password_hash($password_1, PASSWORD_DEFAULT);
         $query = "SELECT * FROM tbl_user WHERE username='$username' AND password='$password'";
         $sql = mysqli_query($db, $query);
 
